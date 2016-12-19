@@ -1,0 +1,36 @@
+[
+
+  { "//////////////////FORMES:TYPE1////////////////":""},
+
+      { "id": 1, "submenu": "type1" ,"nb": 101, "value": "Fenêtre" ,"class":"md-primary" ,"label":"Fenêtre" ,"checked":"true"},
+      { "id": 1, "submenu": "type1" ,"nb": 102, "value": "Porte Fenêtre" ,"class":"" ,"label":"Porte Fenêtre" },
+
+  { "//////////////////FORMES:TYPE2////////////////":""},
+
+      { "id": 2, "submenu": "type2" ,"nb": 1,"label": "Imposte" ,"class":""  },
+      { "id": 2, "submenu": "type2" ,"nb": 2 ,"label": "Allège" ,"class":"md-warn"  },
+      { "id": 2, "submenu": "type2" ,"nb": 3 ,"label": "Latèral Gauche" ,"class":"md-primary"  },
+      { "id": 2, "submenu": "type2" ,"nb": 4 ,"label": "Latèral Droite" ,"class":""  },
+
+  { "//////////////////FORMES:forme////////////////":""},
+    { "//Les Items avec attribut mark=32 designent ceux relatifs aux choix porte fentre///":""},
+
+      { "id": 3, "submenu": "forme" ,"nb": 302,"value": "Rectangle" ,"class":"" ,"label":"Rectangle","checked":"true" ,"mark": 32,"varDormant":"Rect_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 301,"value": "Cintrèe" ,"class":"md-primary" ,"label":"Cintrèe" ,"mark": 32,"varDormant":"ArcH_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 303,"value": "Triangle Total" ,"class":"md-warn" ,"label":"Triangle Total" ,"varDormant":"Triangle_ON" },
+      { "id": 3, "submenu": "forme" ,"nb": 304,"value": "Triangle Partiel" ,"class":"md-primary" ,"label":"Triangle Partiel","mark": 32 ,"varDormant":"DemiHexag_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 305,"value": "Inc gauche totale" ,"class":"" ,"label":"Inc gauche totale" ,"mark": 32 ,"varDormant":"TriangleG_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 306,"value": "Inc droite totale" ,"class":"md-warn" ,"label":"Inc droite totale" ,"mark": 32 ,"varDormant":"TriangleD_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 307,"value": "Inc gauche partielle" ,"class":"md-primary" ,"label":"Inc gauche partielle" ,"mark": 32,"varDormant":"TriangleG_H_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 308,"value": "Inc droite partielle" ,"class":"" ,"label":"Inc droite partielle" ,"mark": 32,"varDormant":"TriangleD_H_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 309,"value": "Inc gauche droite" ,"class":"md-warn" ,"label":"Inc gauche droite" ,"mark": 32,"varDormant":"DemiOctogone_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 310,"value": "Losange total" ,"class":"md-primary" ,"label":"Losange total","varDormant":"Losange_ON" },
+      { "id": 3, "submenu": "forme" ,"nb": 311,"value": "Losange partiel" ,"class":"" ,"label":"Losange partiel","varDormant":"Hexagone_ON" },
+      { "id": 3, "submenu": "forme" ,"nb": 312,"value": "Pentagone" ,"class":"md-warn" ,"label":"Pentagone" ,"varDormant":"Octogone_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 313,"value": "Ovale" ,"class":"md-primary" ,"label":"Ovale" ,"varDormant":"Ovale_ON"},
+      { "id": 3, "submenu": "forme" ,"nb": 314,"value": "Ronde" ,"class":"" ,"label":"Ronde" ,"varDormant":"Rond_ON"}
+
+
+
+
+]

@@ -1,0 +1,72 @@
+<html>
+<head>
+    <base href="/">
+    <title>Minuiserie SIFAST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="node_modules/ng2-material/dist/ng2-material.css">
+    <link rel="stylesheet" href="node_modules/ng2-material/dist/font.css">
+
+    <!-- Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+
+
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!--<script src="node_modules/typescript/lib/typescript.js"></script>-->
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.js"></script>
+
+    <!--importer ici les js de jquery-->
+
+    <script src="./dev/jqueryLibs/jquery-1.12.1.min.js"></script>
+    <script src="./dev/jqueryLibs/jquery-migrate-1.2.1.min.js"></script>
+
+    <!--importer ici la js de bootstrap-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!--Importer ici hammer.js-->
+    <script src="dev/jqueryLibs/hammer/hammer.js" type="text/javascript"></script>
+
+</head>
+<body>
+<app>Loading...</app>
+
+<script>
+    System.config({
+
+        packages: {
+            app: {
+                format: 'register',
+                defaultExtension: 'js'
+            },
+            'ng2-material': {
+                defaultExtension: 'js'
+            }
+
+        },
+        map: {
+            "ng2-material":"node_modules/ng2-material"
+        }
+
+    });
+    System.import('app/boot')
+            .then(null, console.error.bind(console));
+</script>
+
+<!--actions JS des Components-->
+
+    <!--ACTION DU COMPONENT CONTACT-->
+    <script src="dev/contact.component/contact.component.js"></script>
+
+ </body>
+</html>

@@ -1,0 +1,50 @@
+<form ng-submit="submit()">
+    <p>Selected Value:
+        <span class="radioValue">{{ data.init }} et type1 : {{type1Recu}}</span>
+    </p>
+    <md-radio-group [(value)]="data.init">
+
+        <div *ngFor="#item of formeService.items_list">
+
+            <!--CAS OU RIEN N EST SELCTIONNEE-->
+            <div *ngIf="type1Recu==null">
+                <md-radio-button
+                        *ngIf="item.id===3"
+                        value="{{item.value}}"
+                        class="{{item.class}}"
+                        checked="{{item.checked}}"
+                        (click)="onSelectFormeGeo(item)">
+                    {{item.label}}
+                </md-radio-button>
+            </div>
+
+            <!--CAS OU le choix est FENETRE (101)-->
+            <div *ngIf="type1Recu==101">
+                <md-radio-button
+                        *ngIf="item.id===3"
+                        value="{{item.value}}"
+                        class="{{item.class}}"
+                        checked="{{item.checked}}"
+                        (click)="onSelectFormeGeo(item)">
+                    {{item.label}}
+                </md-radio-button>
+            </div>
+
+            <!--CAS OU le choix est Porte FENETRE (102) donc il faut afficher juste ceux avec l attribut nb=302-->
+            <div *ngIf="type1Recu==102">
+                <div *ngIf="item.id===3">
+                    <md-radio-button
+                            *ngIf="item.mark==32"
+                            value="{{item.value}}"
+                            class="{{item.class}}"
+                            checked="{{item.checked}}"
+                            (click)="onSelectFormeGeo(item)">
+                        {{item.label}}
+                    </md-radio-button>
+                </div>
+            </div>
+
+        </div>
+
+    </md-radio-group>
+</form>

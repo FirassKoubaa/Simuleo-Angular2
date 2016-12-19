@@ -1,0 +1,121 @@
+<section layout-padding>
+    <!--{{type1Recu}}  = {{formeService.type1}}-->
+
+    <!--PARSING ALL ITEMS-->
+    <div *ngFor="#item of formeService.items_list">
+
+        <!--CAS OU RIEN N EST SELECTIONNE-->
+
+        <!--
+                         on envoie !cb1 , !cb2 .. parceque au moment du click , la valeur envoyè est la valeur ancienne
+                         juste avant le clic puis le changement d etat se fait , don con envoie l etait inverse
+                         puisque le clic va nous transformer a cet etat
+        -->
+        <div *ngIf="type1Recu==null">
+            <div *ngIf="item.id===2" layout="row" layout-wrap>
+                <md-checkbox *ngIf="item.nb===1"
+                             [(checked)]="cb1"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectImposteF(!cb1)">
+                    {{item.label}}: {{ cb1 }}
+                </md-checkbox>
+
+                <md-checkbox *ngIf="item.nb===2"
+                             [(checked)]="cb2"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectAllegeF(!cb2)">
+                    {{item.label}}: {{ cb2 }}
+                </md-checkbox>
+
+                <md-checkbox *ngIf="item.nb===3"
+                             [(checked)]="cb3"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectLgF(!cb3)">
+                    {{item.label}}: {{ cb3 }}
+                </md-checkbox>
+
+                <md-checkbox *ngIf="item.nb===4"
+                             [(checked)]="cb4"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectLdF(!cb4)">
+                    {{item.label}}: {{ cb4 }}
+                </md-checkbox>
+            </div>
+        </div>
+
+
+        <!--CAS OU LE CHOIX EST FENETRE-->
+        <div *ngIf="type1Recu==101">
+            <div *ngIf="item.id===2" layout="row" layout-wrap>
+                <md-checkbox *ngIf="item.nb===1"
+                             [(checked)]="cb1"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectImposteF(!cb1)">
+                    {{item.label}}: {{ cb1 }}
+                </md-checkbox>
+
+                <md-checkbox *ngIf="item.nb===2"
+                             [(checked)]="cb2"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectAllegeF(!cb2)">
+                    {{item.label}}: {{ cb2 }}
+                </md-checkbox>
+
+                <md-checkbox *ngIf="item.nb===3"
+                             [(checked)]="cb3"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectLgF(!cb3)">
+                    {{item.label}}: {{ cb3 }}
+                </md-checkbox>
+
+                <md-checkbox *ngIf="item.nb===4"
+                             [(checked)]="cb4"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectLdF(!cb4)">
+                    {{item.label}}: {{ cb4 }}
+                </md-checkbox>
+            </div>
+        </div>
+
+
+        <!--CAS OU LE CHOIX EST PORTE FENTRE-->
+        <div *ngIf="type1Recu==102">
+            <div *ngIf="item.id===2" layout="row" layout-wrap>
+                <md-checkbox *ngIf="item.nb===1"
+                             [(checked)]="cb11"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectImpostePF(!cb11)">
+                    {{item.label}}: {{ cb11 }}
+                </md-checkbox>
+
+
+                <md-checkbox *ngIf="item.nb===3"
+                             [(checked)]="cb33"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectLgPF(!cb33)">
+                    {{item.label}}: {{ cb33 }}
+                </md-checkbox>
+
+                <md-checkbox *ngIf="item.nb===4"
+                             [(checked)]="cb44"
+                             aria-label="{{item.label}}"
+                             class="{{item.class}}"
+                             (click)="onSelectLdPF(!cb44)">
+                    {{item.label}}: {{ cb44 }}
+                </md-checkbox>
+            </div>
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,5 @@
+[
+  { "id": 1, "taille": "petit" ,"class":"petitHolder","y": 1,"x": 1,"height":7,"width": 7},
+  { "id": 2, "taille": "grand" ,"class":"grandHolder","y": 1,"x": 1,"height":7,"width": 7}
+
+]

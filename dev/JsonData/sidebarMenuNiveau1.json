@@ -1,0 +1,29 @@
+[
+
+
+
+  { "id": 1,"href":"#menuMaisons", "class": "list-group-item list-group-item-success"
+  ,"parent": "#MainMenu","icone":"glyphicon glyphicon-home", "label":"MA MAISON", "fleche":"fa fa-fw fa-caret-down" },
+
+  { "id": 2,"href":"#menuFormes", "class": "list-group-item list-group-item-success"
+  ,"parent": "#MainMenu","icone":"glyphicon glyphicon-th-large", "label":"FORMES", "fleche":"fa fa-fw fa-caret-down" },
+
+  { "id": 3,"href":"#menuCouleurs", "class": "list-group-item list-group-item-success"
+  ,"parent": "#MainMenu","icone":"fa fa-fw fa-dashboard", "label":"COULEURS", "fleche":"fa fa-fw fa-caret-down" },
+
+  { "id": 4,"href":"#menuVitrages", "class": "list-group-item list-group-item-success"
+  ,"parent": "#MainMenu","icone":"fa fa-fw fa-edit", "label":"VITRAGES", "fleche":"fa fa-fw fa-caret-down" },
+
+  { "id": 5,"href":"#menuAccessoires", "class": "list-group-item list-group-item-success"
+  ,"parent": "#MainMenu","icone":"glyphicon glyphicon-plus", "label":"ACCESSOIRES", "fleche":"fa fa-fw fa-caret-down" },
+
+  { "id": 6,"href":"#menuParametres", "class": "list-group-item list-group-item-success"
+  ,"parent": "#MainMenu","icone":"fa fa-fw fa-wrench", "label":"PARAMETRAGES", "fleche":"fa fa-fw fa-caret-down" },
+
+  { "id": 7,"href":"#menu3D", "class": "list-group-item list-group-item-success"
+  ,"parent": "#MainMenu","icone":"glyphicon glyphicon-resize-full", "label":"3D", "fleche":"fa fa-fw fa-caret-down" }
+
+
+
+
+]

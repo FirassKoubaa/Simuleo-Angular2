@@ -1,0 +1,414 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+    <div class="nav navbar-nav side-nav">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="panel-group" id="MainMenu">
+
+                    <div class="list-group panel">
+
+                        <!-- /////////////////////////MAISON/////////////////-->
+
+                        <!--//////////////1er niveau-->
+
+
+                        <div class="styledivs">
+                            <div *ngFor="#item of menuService.items_niv1">
+                                <div *ngIf="item.id == 1 ">
+                                    <a href="{{item.href}}" class="{{item.class}}"
+                                       data-toggle="collapse" [attr.data-parent]="item.parent">
+                                        <i class="{{item.icone}}"></i> <span class="titres">{{item.label}}</span> <i
+                                            class="{{item.fleche}}"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--//////////////2eme niveau-->
+
+
+                            <div id="menuMaisons" class="collapse">
+                                <li *ngFor="#item of menuService.items_list">
+                                    <div *ngIf="item.name =='maison' ">
+                                        <div *ngIf="item.id ==1">  <!--maisons temoins -->
+                                            <a href="{{item.href}}" class="{{item.class}}" data-toggle="collapse"
+                                               data-parent="#menuMaisons">
+                                                <span class="titres">{{item.label}}</span>
+                                            </a>
+                                        </div>
+
+                                        <div *ngIf="item.id ==2">  <!--charger photo -->
+                                            <a type="file" href="{{item.href}}" class="{{item.class}}"
+                                               data-toggle="collapse"
+                                               data-parent="#menuMaisons">
+                                                <span class="titres">{{item.label}}</span>
+                                            </a>
+
+
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                            </div>
+                        </div>
+
+                        <!--  /////////////////////FORMES-->
+
+                        <!--//////////////1er niveau-->
+
+
+                        <div class="styledivs">
+                            <div *ngFor="#item of menuService.items_niv1">
+                                <div *ngIf="item.id == 2 ">
+                                    <a href="{{item.href}}" class="{{item.class}}" data-toggle="collapse"
+                                       [attr.data-parent]="item.parent">
+                                        <i class="{{item.icone}}"></i>
+                                        <span class="titres"> {{item.label}} </span>
+                                        <i class="{{item.fleche}}"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--//////////////2eme niveau-->
+
+
+                            <div id="menuFormes" class="collapse">
+
+
+                                <li *ngFor="#item of menuService.items_list">
+                                    <div *ngIf="item.name =='formes' ">
+                                        <a href="{{item.href}}" class="list-group-item" data-toggle="collapse"
+                                           [attr.data-parent]="item.parent">
+                                            <span class="titres">{{item.label}}</span>
+                                        </a>
+
+                                        <div class="funkyradio collapse list-group-submenu" id="{{item.idname}}">
+                                            <div *ngIf="item.id ==1">
+                                                <radioFormesType1></radioFormesType1>
+                                            </div>
+
+                                            <div *ngIf="item.id ==2">
+                                                <checkboxFormesType2></checkboxFormesType2>
+                                            </div>
+
+                                            <div *ngIf="item.id ==3">
+                                                <radioFormesForme></radioFormesForme>
+                                            </div>
+
+                                            <div *ngIf="item.id >=4"> <!--quelquonque -->
+                                                <!--put here the directive for the component created-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </div>
+
+
+                            <!--
+                                    ////////////////////couleurs
+                            -->
+
+                            <!--//////////////1er niveau-->
+
+                            <div class="styledivs">
+                                <div *ngFor="#item of menuService.items_niv1">
+                                    <div *ngIf="item.id == 3 ">
+                                        <a href="{{item.href}}" class="{{item.class}}"
+                                           data-toggle="collapse" [attr.data-parent]="item.parent">
+                                            <i class="{{item.icone}}"></i>
+                                            <span class="titres"> {{item.label}} </span>
+                                            <i class="{{item.fleche}}"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!--//////////////2eme niveau-->
+
+                                <div id="menuCouleurs" class="collapse">
+
+                                    <li *ngFor="#item of menuService.items_list">
+                                        <a *ngIf="item.name =='couleurs' " (click)="onselect(item.id)" href="#couleurs"
+                                           class="list-group-item" data-toggle="collapse" data-parent="#menuCouleurs">
+                                            <span class="titres">{{item.label}}</span>
+                                        </a>
+                                    </li>
+
+                                </div>
+                            </div>
+
+                            <!--
+
+                                    ///////////////////// vitrages //////////////////////////
+                            -->
+                            <!--//////////////1er niveau-->
+                            <div class="styledivs">
+                                <div *ngFor="#item of menuService.items_niv1">
+                                    <div *ngIf="item.id == 4 ">
+                                        <a href="{{item.href}}" class="{{item.class}}"
+                                           data-toggle="collapse" [attr.data-parent]="item.parent">
+                                            <i class="{{item.icone}}"></i> <span class="titres">{{item.label}}</span> <i
+                                                class="{{item.fleche}}"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--//////////////2eme niveau-->
+
+                                <div id="menuVitrages" class="collapse">
+                                    <li *ngFor="#item of menuService.items_list">
+                                        <div *ngIf="item.name =='vitrages' ">
+                                            <a class="list-group-item">
+                                                <span class="titres">{{item.label}}</span>  <!--opacite-->
+                                            </a>
+
+                                            <div *ngIf="item.id ==1" class="{{item.classbtn}}">
+
+                                                <!--<input type="range" name="range" min="1" max="100" value="50" onchange="rangePrimary.value=value">-->
+                                                <input type="range" name="range" min="{{item.min}}"
+                                                       max="{{item.max}}" value="{{item.init}}"
+                                                       onchange="opacite.value=value"
+                                                       [(ngModel)]="ParamService.opacite">
+                                                <output id="opacite">{{item.init}}</output>
+                                                <br>
+
+                                            </div>
+                                        </div>
+
+                                    </li>
+
+                                </div>
+                            </div>
+
+                            <!--
+                                    /////////////////// accessoires ///////////////////////////
+                            -->
+                            <!--///////1er niveau ///////-->
+
+                            <div class="styledivs">
+                                <div *ngFor="#item of menuService.items_niv1">
+                                    <div *ngIf="item.id == 5 ">
+                                        <a href="{{item.href}}" class="{{item.class}}"
+                                           data-toggle="collapse" [attr.data-parent]="item.parent">
+                                            <i class="{{item.icone}}"></i> <span class="titres">{{item.label}}</span> <i
+                                                class="{{item.fleche}}"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--///////2eme niveau ///////-->
+
+                                <div id="menuAccessoires" class="collapse">
+                                    <li *ngFor="#item of menuService.items_list">
+                                        <div *ngIf="item.name =='accessoires' ">
+                                            <a class="list-group-item">
+                                                <span class="titres">{{item.label}}</span>
+                                            </a>
+                                        </div>
+                                    </li>
+
+                                </div>
+
+                            </div>
+
+                            <!--
+                                    ////////////////// parametrages (1er niveau) ////////////
+
+                            -->
+                            <div class="styledivs">
+
+                                <div *ngFor="#item of menuService.items_niv1">
+                                    <div *ngIf="item.id == 6 ">
+                                        <a href="{{item.href}}" class="{{item.class}}"
+                                           data-toggle="collapse" [attr.data-parent]="item.parent">
+                                            <i class="{{item.icone}}"></i>
+                                            <span class="titres">{{item.label}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!--
+                                    ///////////////// perspectives 3d///////////////////////////////////////////////////
+
+                            -->
+                            <!--////////////////1er niveau-->
+                            <div class="styledivs">
+                                <div *ngFor="#item of menuService.items_niv1">
+                                    <div *ngIf="item.id == 7 ">
+                                        <a href="{{item.href}}" class="{{item.class}}"
+                                           data-toggle="collapse" [attr.data-parent]="item.parent">
+                                            <i class="{{item.icone}}"></i> <span class="titres">{{item.label}}</span> <i
+                                                class="{{item.fleche}}"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--//////////////2eme niveau-->
+                                <div id="menu3D" class="collapse">
+                                    <li *ngFor="#item of menuService.items_list">
+                                        <div *ngIf="item.name =='3d' ">
+                                            <a class="list-group-item">{{item.label}}</a>
+                                            <div *ngIf="item.id ==1" class="{{item.classbtn}}">  <!--////opacite-->
+                                                <input type="range" name="range" min="{{item.min}}" max="{{item.max}}"
+                                                       value="{{item.init}}"
+                                                       onchange="rangeWarning.value=value"
+                                                       [(ngModel)]="ParamService.angle">
+                                                <output id="rangeWarning">{{item.init}}</output>
+                                            </div>
+                                            <div *ngIf="item.id ==2" class="{{item.classbtn}}">  <!--////perspective-->
+                                                <input type="range" name="range" min="{{item.min}}" max="{{item.max}}"
+                                                       value="{{item.init}}"
+                                                       onchange="rangeDanger.value=value"
+                                                       [(ngModel)]="ParamService.perspective">
+                                                <output id="rangeDanger">{{item.init}}</output>
+                                            </div>
+
+                                            <div *ngIf="item.id >=3" class="{{item.classbtn}}">  <!--////quelquonque-->
+                                                <input type="range" name="range" min="{{item.min}}" max="{{item.max}}"
+                                                       value="{{item.init}}"
+                                                       onchange="rangeAlea.value=value"
+                                                       [(ngModel)]="ParamService.perspective">
+                                                <output id="rangeAlea">{{item.init}}</output>
+                                            </div>
+                                            <br>
+                                        </div>
+                                    </li>
+
+
+                                </div>
+                            </div>
+
+                            <!--
+                                                        /////////////////   Menu eventuellement ajoutè///////////////////////////////////////////////////
+                            -->
+
+                            <div class="styledivs">
+
+                                <div *ngFor="#item of menuService.items_niv1">
+                                    <div *ngIf="item.id >= 8 ">
+                                        <a href="{{item.href}}" class="{{item.class}}"
+                                           data-toggle="collapse" [attr.data-parent]="item.parent">
+                                            <i class="{{item.icone}}"></i>
+                                            <span class="titres">{{item.label}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div> <!--group panel-->
+                    </div> <!--mainmenu-->
+                </div> <!--row-->
+            </div> <!--container fluid-->
+        </div> <!--sidenav-->
+    </div> <!-- collapse ex1 -->
+
+
+    <!--///////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////RIGHT PANELS/////////////////////////////////-->
+
+    <!--** right panel Maisons temoins-->
+    <div id="maisonsTemoins" class="collapse dropdown-menu pull-rightMaisonsTemoins">
+        <housepic></housepic>
+    </div>
+
+    <!--** right panel Couleurs-->
+
+    <div id="couleurs" class="collapse dropdown-menu pull-rightCouleurs">
+        <!--<filmsPlaxes></filmsPlaxes>-->
+        <couleurs></couleurs>
+    </div>
+
+
+    <!--** right panel parametrages-->
+    <div id="menuParametres" class="collapse dropdown-menu pull-right">
+        <li *ngFor="#item of menuService.items_list">
+            <div *ngIf="item.name =='parametrages' ">
+                {{item.label}}
+
+                <div *ngIf="item.id ==1" class="{{item.classbtn}}"> <!--////position horizontale-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range1.value=value"
+                           [(ngModel)]="ParamService.dormant.X0">
+                    <output id="range1">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==2" class="{{item.classbtn}}"> <!--////position verticale-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range2.value=value"
+                           [(ngModel)]="ParamService.dormant.Y0">
+                    <output id="range2">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==3" class="{{item.classbtn}}"> <!--////largeur totale-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range3.value=value"
+                           [(ngModel)]="ParamService.dormant.Centre_Larg">
+                    <output id="range3">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==4" class="{{item.classbtn}}"> <!--////hauteur totale-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range4.value=value"
+                           [(ngModel)]="ParamService.dormant.Centre_Haut">
+                    <output id="range4">{{item.init}}</output>
+                </div>
+
+                <!--{ "id": 5,"name":"parametrages", "label":"Largeur Profilè extèrieur:" ,"classbtn":"range range-danger sliderbtns","min":1,"max":60,"init":50  },-->
+                <div *ngIf="item.id ==5" class="{{item.classbtn}}"> <!--////largeur profile exterieur-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range5.value=value"
+                           [(ngModel)]="ParamService.dormant.Profile_Ext_Larg">
+                    <output id="range5">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==6" class="{{item.classbtn}}"> <!--////largeur profile interieur-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range6.value=value"
+                           [(ngModel)]="ParamService.dormant.Profile_Int_Larg">
+                    <output id="range6">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==7" class="{{item.classbtn}}"> <!--////Hauteur Imposte-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range7.value=value"
+                           [(ngModel)]="ParamService.dormant.Imposte_Pourcent">
+                    <output id="range7">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==8" class="{{item.classbtn}}"> <!--////Hauteur allège-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}/10"
+                           onchange="range8.value=value/10"
+                           [(ngModel)]="ParamService.dormant.Allege_Pourcent">
+                    <output id="range8">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==9" class="{{item.classbtn}}"> <!--////hauteur latèral gauche-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}/10"
+                           onchange="range9.value=value"
+                           [(ngModel)]="ParamService.dormant.LG_Pourcent">
+                    <output id="range9">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id ==10" class="{{item.classbtn}}"> <!--////hauteur lateral droite-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}/10"
+                           onchange="range10.value=value"
+                           [(ngModel)]="ParamService.dormant.LD_Pourcent">
+                    <output id="range10">{{item.init}}</output>
+                </div>
+
+                <div *ngIf="item.id >=11" class="{{item.classbtn}}"> <!--////QUELQUONQUE-->
+                    <input type="range" name="range" min="{{item.min}}" max="{{item.max}}" value="{{item.init}}"
+                           onchange="range11.value=value">
+                    <output id="range11">{{item.init}}</output>
+                </div>
+            </div>
+
+        </li>
+
+    </div>
+
+</div>
+
+

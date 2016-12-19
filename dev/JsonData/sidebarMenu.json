@@ -1,0 +1,65 @@
+[
+
+  { "//////////////////SUBMENU MAISON////////////////":""},
+
+  { "id": 1,"name":"maison", "href": "#maisonsTemoins" ,"class": "list-group-item", "label":"Maisons Tèmoins" },
+
+
+  { "id": 2,"name":"maison", "href": "" ,"class": "list-group-item","label":"Charger Photo" },
+
+
+  { "//////////////////SUBMENU FORMES////////////////":""},
+
+  { "id": 1,"name":"formes","href":"#submenuType1","parent":"#submenuType1" ,"label":"Types","idname":"submenuType1"},
+  { "id": 2,"name":"formes","href":"#submenuType2","parent":"#submenuType2" ,"label":"Extensions","idname":"submenuType2"},
+  { "id": 3,"name":"formes","href":"#submenuForme","parent":"#submenuForme" ,"label":"Forme Gèomètrique","idname":"submenuForme"},
+
+
+
+  { "//////////////////SUBMENU COULEURS////////////////":""},
+
+  { "id": 1,"name":"couleurs", "label":"Teintè en Masse" },
+  { "id": 2,"name":"couleurs", "label":"Films Plaxès" },
+  { "id": 3,"name":"couleurs", "label":"Pmma" },
+  { "id": 4,"name":"couleurs", "label":"Plaquage bois" },
+  { "id": 5,"name":"couleurs", "label":"Imprimès" },
+  { "id": 6,"name":"couleurs", "label":"Motifs Chargès"},
+
+  { "id": 7,"name":"couleurs", "label":"Charger un motif" },
+
+  { "//////////////////SUBMENU VITRAGES OPACITE////////////////":""},
+  { "id": 1,"name":"vitrages", "label":"Opacitè" ,"classbtn":"range range-primary sliderbtns","min":1,"max":10,"init":10 },
+
+  { "//////////////////SUBMENU ACCESSOIRES////////////////":""},
+
+  { "id": 1,"name":"accessoires", "label":"2 Paumelles" },
+  { "id": 2,"name":"accessoires", "label":"3 Paumelles" },
+
+
+
+  { "//////////////////Parametrages////////////////":""},
+  { "id": 1,"name":"parametrages", "label":"Position Horizontale:" ,"classbtn":"range range-danger sliderbtns","min":1,"max":1000,"init":200  },
+  { "id": 2,"name":"parametrages", "label":"Position verticale:" ,"classbtn":"range range-danger sliderbtns","min":1,"max":500,"init":36  },
+  { "id": 3,"name":"parametrages", "label":"Largeur Totale:" ,"classbtn":"range range-info sliderbtns","min":100,"max":1100,"init":273  },
+  { "id": 4,"name":"parametrages", "label":"Hauteur Totale:" ,"classbtn":"range range-info sliderbtns","min":100,"max":610,"init":400 },
+  
+  { "id": 5,"name":"parametrages", "label":"Largeur Profilè Extèrieur:" ,"classbtn":"range range-primary sliderbtns","min":10,"max":100,"init":25 },
+  { "id": 6,"name":"parametrages", "label":"Largeur Profilè Intèrieur:" ,"classbtn":"range range-primary sliderbtns","min":10,"max":100,"init":25 },
+
+  { "id": 7,"name":"parametragesnn", "label":"Hauteur Imposte:" ,"classbtn":"range range-success sliderbtns","min":"0.01","max":"1.00","init":"0.35" },
+  { "id": 8,"name":"parametragesnn", "label":"Hauteur Allège:" ,"classbtn":"range range-success sliderbtns","min":0.01,"max":1.00,"init":0.35 },
+  { "id": 9,"name":"parametragesnn", "label":"Hauteur latèral gauche:" ,"classbtn":"range range-success sliderbtns","min":0.01,"max":1.00,"init":0.35 },
+  { "id": 10,"name":"parametragesnn", "label":"hauteur latèral droite:" ,"classbtn":"range range-success sliderbtns","min":0.01,"max":1.00,"init":0.35 },
+
+  { "//////////////////SUBMENU 3D////////////////":""},
+  { "id": 1,"name":"3d", "label":"Rotation" ,"classbtn":"range range-warning sliderbtns","min":1,"max":360,"init":0  },
+  { "id": 2,"name":"3d", "label":"Vue en Perspective" ,"classbtn":"range range-danger sliderbtns","min":1,"max":100,"init":0  }
+
+
+
+
+
+
+
+
+]

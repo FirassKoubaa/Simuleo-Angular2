@@ -1,0 +1,67 @@
+.container{  }
+
+/*rendre l'image non selectionnable */
+#background{
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.contentSizes{
+    /*background-image: url("../../../dev/backgrounds/plante-entree-maison.jpg");*/
+    /*margin-left: 125px;*/
+    /*padding-left: 135px;*/
+    left: 200px;
+    margin-top: 0px;
+    height: 92%;
+    width: 84.966%;
+    position: absolute;
+    background-size:cover
+
+}
+
+.params{
+    position: relative;
+    z-index: 96;
+    float: right;
+    /*margin-left: 250px;*/
+    margin-top: 0px;
+}
+
+.simulation{
+
+    /*cas pour bon affichage sur ecran hp*/
+        position: fixed;
+        z-index: 97;
+        left: 200px;
+        cursor:pointer;
+/*        padding-top: 85px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        margin-top: 0px;*/
+
+
+
+
+    /*cas pour bon affichage sur hp et dell*/
+   /* position: relative;
+    z-index: 97;
+    left: 200px;
+    margin-top: -17.8%;
+    height: 126%;
+    width: 84.9%;*/
+
+}
+
+.holderRotation{
+    z-index: 98;
+    cursor:grabbing;
+    touch-action: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

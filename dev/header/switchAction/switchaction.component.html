@@ -1,0 +1,12 @@
+<div class="inset">
+    <md-switch [(checked)]="data.sw" aria-label="Switch 1" (click)="onSwitch(!data.sw)">
+        <div *ngIf="data.sw ==true">
+        Vue: Intèrieure
+        </div>
+
+        <div *ngIf="data.sw ==false">
+            Vue: Extèrieure
+        </div>
+    </md-switch>
+</div>
+

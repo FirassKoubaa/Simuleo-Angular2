@@ -1,0 +1,246 @@
+<!--BACKGROUND IMAGE-->
+
+<div id="back" class="contentSizes" style.backgroundImage="url('{{BackService.imageLink}}')">
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <div>
+        <!--DORMANT-->
+        <defsCouleurs></defsCouleurs>
+
+        <svg class="simulation" id="idsimulation"
+             [attr.width]="ParamService.dormant.Total_Larg()"
+             [attr.height]="ParamService.dormant.Total_Haut()"
+             [attr.viewBox]="'-20 -110 ' + ParamService.dormant.Viewbox_Larg() + ' ' + ParamService.dormant.Viewbox_Haut()"
+             preserveAspectRatio="none"
+             [attr.data-h]="ParamService.dormant.Total_Haut()"
+             [attr.data-w]="ParamService.dormant.Total_Larg()"
+             [attr.style]=" 'transform: translate('+ ParamService.dormant.X0 +'px,'+ ParamService.dormant.Y0+'px) rotate('+ParamService.angle+'deg); opacity: '+(ParamService.opacite)/10+'; '">
+
+
+
+
+            <defs>
+                <pattern id="VueExt" x="0" y="0" [attr.width]="ParamService.dormant.Total_Larg()"
+                         [attr.height]="ParamService.dormant.Total_Haut()" patternUnits="userSpaceOnUse"
+                         [attr.viewBox]="'0 0 '+ParamService.dormant.Total_Larg()+' '+ParamService.dormant.Total_Haut()">
+                    <image xmlns:xlink="http://www.w3.org/1999/xlink" [attr.width]="ParamService.dormant.Total_Larg()"
+                           [attr.height]="ParamService.dormant.Total_Haut()" xmlns:xlink="http://www.w3.org/1999/xlink"
+                           xlink:href="./assets/tour.jpg"
+                           [attr.viewBox]="'0 0 '+ParamService.dormant.Total_Larg()+' '+ParamService.dormant.Total_Haut()"
+                           preserveAspectRatio="xMinYMin slice"></image>
+                </pattern>
+            </defs>
+                <g id="mobilite" >
+                <path id="TourExt" fill="url(#VueExt)"
+                      [attr.d]="'M'+ParamService.dormant.VueExt_X0()+','+ParamService.dormant.VueExt_Y0()+' A'+ParamService.dormant.Dormant_H_RayonX1()+','+ParamService.dormant.Dormant_H_RayonY1()+' 0,0,0 '+ParamService.dormant.VueExt_X1()+','+ParamService.dormant.VueExt_Y1()+' L'+ParamService.dormant.VueExt_X2()+','+ParamService.dormant.VueExt_Y2()+' L'+ParamService.dormant.VueExt_X3()+','+ParamService.dormant.VueExt_Y3()+' L'+ParamService.dormant.VueExt_X4()+','+ParamService.dormant.VueExt_Y4()+'  A'+ParamService.dormant.Dormant_B_RayonX1()+','+ParamService.dormant.Dormant_B_RayonY1()+' 0,0,0 '+ParamService.dormant.VueExt_X5()+','+ParamService.dormant.VueExt_Y5()+' L'+ParamService.dormant.VueExt_X6()+','+ParamService.dormant.VueExt_Y6()+' L'+ParamService.dormant.VueExt_X7()+','+ParamService.dormant.VueExt_Y7()+' A'+ParamService.dormant.Dormant_H_RayonX1()+','+ParamService.dormant.Dormant_H_RayonY1()+' 0,0,0 '+ParamService.dormant.VueExt_X8()+','+ParamService.dormant.VueExt_Y8()+' z'"></path>
+
+
+                <g id="Dormant" [attr.fill]="ParamService.dormant.Couleur_Fill"
+                   [attr.stroke]="ParamService.dormant.Couleur_Stroke"
+                   stroke-width="0.3" stroke-opacity="0.5" stroke-linejoin="round" opacity="1" filter="url(#OmbreG)">
+                    <path *ngIf="ParamService.dormant.Porte_ON==1" id="Seuil"
+                          [attr.d]="'M'+ParamService.dormant.Seuil_X()+','+ParamService.dormant.Seuil_Y()+' h'+ParamService.dormant.Seuil_D1()+' z'"
+                          [attr.stroke]="''+ParamService.dormant.Seuil_Stroke+''"
+                          [attr.stroke-width]="''+ParamService.dormant.Seuil_Stroke_Width+''"></path>
+                    <path *ngIf="ParamService.dormant.getSTatus()==true" id="Dormant_HG"
+                          [attr.d]="'M'+ParamService.dormant.Dormant_HG_X0()+','+ParamService.dormant.Dormant_HG_Y0()+' A'+ParamService.dormant.Dormant_H_RayonX1()+','+ParamService.dormant.Dormant_H_RayonY1()+' 0,0,0 '+ParamService.dormant.Dormant_HG_X1()+','+ParamService.dormant.Dormant_HG_Y1()+' L'+ParamService.dormant.Dormant_HG_X2()+','+ParamService.dormant.Dormant_HG_Y2()+' A'+ParamService.dormant.Dormant_H_RayonX2()+','+ParamService.dormant.Dormant_H_RayonY2()+' 0,0,1 '+ParamService.dormant.Dormant_HG_X3()+','+ParamService.dormant.Dormant_HG_Y3()+' z'"></path>
+
+                    <!--Deuxième Cas-->
+                    <path *ngIf="ParamService.dormant.getSTatus()==false" id="Dormant_HG"
+                          [attr.d]="'M0,0 a'+ParamService.dormant.Dormant_H_RayonY1()+','+ParamService.dormant.Dormant_H_RayonX1()+' 0,0,0 0,'+ParamService.dormant.Dormant_HG_DY1()+' l'+ParamService.dormant.Dormant_HG_LX1()+','+ParamService.dormant.Dormant_HG_LY1()+' a'+ParamService.dormant.Dormant_H_RayonY2()+','+ParamService.dormant.Dormant_H_RayonX2()+' 0,0,1 '+ParamService.dormant.Dormant_HG_DX2()+','+ParamService.dormant.Dormant_HG_DY2()+' l'+ParamService.dormant.Dormant_HG_LX2()+','+ParamService.dormant.Dormant_HG_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_HG_Trans_X()+','+ParamService.dormant.Dormant_HG_Trans_Y()+') rotate('+ParamService.dormant.Dormant_HG_Rotate()+')'"></path>
+                    <path *ngIf="ParamService.dormant.Dormant_GG_ON()==1" id="Dormant_GG"
+                          [attr.d]="'M0,0 v'+ParamService.dormant.Dormant_GG_DY1()+' l'+ParamService.dormant.Dormant_GG_LX1()+','+ParamService.dormant.Dormant_GG_LY1()+' v'+ParamService.dormant.Dormant_GG_DY2()+' l'+ParamService.dormant.Dormant_GG_LX2()+','+ParamService.dormant.Dormant_GG_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_GG_Trans_X()+','+ParamService.dormant.Dormant_GG_Trans_Y()+') rotate('+ParamService.dormant.Dormant_GG_Rotate()+')'"></path>
+                    <path *ngIf="ParamService.dormant.Dormant_BG_ON()==1" id="Dormant_BG"
+                          [attr.d]="'M0,0 v'+ParamService.dormant.Dormant_BG_DY1()+' l'+ParamService.dormant.Dormant_BG_LX1()+','+ParamService.dormant.Dormant_BG_LY1()+' v'+ParamService.dormant.Dormant_BG_DY2()+' l'+ParamService.dormant.Dormant_BG_LX2()+','+ParamService.dormant.Dormant_BG_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_BG_Trans_X()+','+ParamService.dormant.Dormant_BG_Trans_Y()+') rotate('+ParamService.dormant.Dormant_BG_Rotate()+')'"></path>
+                    <path *ngIf="ParamService.dormant.Dormant_BM_ON()==1" id="Dormant_BM"
+                          [attr.d]="'M0,0 a'+ParamService.dormant.Dormant_B_RayonY1()+','+ParamService.dormant.Dormant_B_RayonX1()+' 0,0,0 0,'+ParamService.dormant.Dormant_BM_DY1()+' l'+ParamService.dormant.Dormant_BM_LX1()+','+ParamService.dormant.Dormant_BM_LY1()+' a'+ParamService.dormant.Dormant_B_RayonY2()+','+ParamService.dormant.Dormant_B_RayonX2()+' 0,0,1 0,'+ParamService.dormant.Dormant_BM_DY2()+' l'+ParamService.dormant.Dormant_BM_LX2()+','+ParamService.dormant.Dormant_BM_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_BM_Trans_X()+','+ParamService.dormant.Dormant_BM_Trans_Y()+') rotate('+ParamService.dormant.Dormant_BM_Rotate()+')'"></path>
+                    <path *ngIf="ParamService.dormant.Dormant_BD_ON()==1" id="Dormant_BD"
+                          [attr.d]="'M0,0 v'+ParamService.dormant.Dormant_BD_DY1()+' l'+ParamService.dormant.Dormant_BD_LX1()+','+ParamService.dormant.Dormant_BD_LY1()+' v'+ParamService.dormant.Dormant_BD_DY2()+' l'+ParamService.dormant.Dormant_BD_LX2()+','+ParamService.dormant.Dormant_BD_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_BD_Trans_X()+','+ParamService.dormant.Dormant_BD_Trans_Y()+') rotate('+ParamService.dormant.Dormant_BD_Rotate()+')'"></path>
+                    <path *ngIf="ParamService.dormant.Dormant_DD_ON()==1" id="Dormant_DD"
+                          [attr.d]="'M0,0 v'+ParamService.dormant.Dormant_DD_DY1()+' l'+ParamService.dormant.Dormant_DD_LX1()+','+ParamService.dormant.Dormant_DD_LY1()+' v'+ParamService.dormant.Dormant_DD_DY2()+' l'+ParamService.dormant.Dormant_DD_LX2()+','+ParamService.dormant.Dormant_DD_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_DD_Trans_X()+','+ParamService.dormant.Dormant_DD_Trans_Y()+') rotate('+ParamService.dormant.Dormant_DD_Rotate()+')'"></path>
+                    <path *ngIf="ParamService.dormant.getSTatus()==false" id="Dormant_HD"
+                          [attr.d]="'M0,0 a'+ParamService.dormant.Dormant_H_RayonY1()+','+ParamService.dormant.Dormant_H_RayonX1()+' 0,0,0 0,'+ParamService.dormant.Dormant_HD_DY1()+' l'+ParamService.dormant.Dormant_HD_LX1()+',-'+ParamService.dormant.Dormant_HD_LY1()+' a'+ParamService.dormant.Dormant_H_RayonY2()+','+ParamService.dormant.Dormant_H_RayonX2()+' 0,0,1 '+ParamService.dormant.Dormant_HD_DX2()+',-'+ParamService.dormant.Dormant_HD_DY2()+' l'+ParamService.dormant.Dormant_HD_LX2()+','+ParamService.dormant.Dormant_HD_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_HD_Trans_X()+','+ParamService.dormant.Dormant_HD_Trans_Y()+') rotate('+ParamService.dormant.Dormant_HD_Rotate()+')'"></path>
+                    <!--Deuxième Cas-->
+                    <path *ngIf="ParamService.dormant.getSTatus()==true" id="Dormant_HD"
+                          [attr.d]="'M'+ParamService.dormant.Dormant_HD_X0()+','+ParamService.dormant.Dormant_HD_Y0()+' A'+ParamService.dormant.Dormant_H_RayonX1()+','+ParamService.dormant.Dormant_H_RayonY1()+' 0,0,0 '+ParamService.dormant.Dormant_HD_X1()+','+ParamService.dormant.Dormant_HD_Y1()+' L'+ParamService.dormant.Dormant_HD_X2()+','+ParamService.dormant.Dormant_HD_Y2()+' A'+ParamService.dormant.Dormant_H_RayonX2()+','+ParamService.dormant.Dormant_H_RayonY2()+' 0,0,1 '+ParamService.dormant.Dormant_HD_X3()+','+ParamService.dormant.Dormant_HD_Y3()+' z'"></path>
+                    <path id="Dormant_HM"
+                          [attr.d]="'M0,0 a'+ParamService.dormant.Dormant_H_RayonY1()+','+ParamService.dormant.Dormant_H_RayonX1()+' 0,0,0 0,'+ParamService.dormant.Dormant_HM_DY1()+' l'+ParamService.dormant.Dormant_HM_LX1()+','+ParamService.dormant.Dormant_HM_LY1()+' a'+ParamService.dormant.Dormant_H_RayonY2()+','+ParamService.dormant.Dormant_H_RayonX2()+' 0,0,1 '+ParamService.dormant.Dormant_HM_DX2()+','+ParamService.dormant.Dormant_HM_DY2()+' l'+ParamService.dormant.Dormant_HM_LX2()+','+ParamService.dormant.Dormant_HM_LY2()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_HM_Trans_X()+','+ParamService.dormant.Dormant_HM_Trans_Y()+') rotate('+ParamService.dormant.Dormant_HM_Rotate()+')'"></path>
+
+
+                    <path *ngIf="ParamService.dormant.LG_ON==1" id="Dormant_LG"
+                          [attr.d]="'M0,0'+' v'+ParamService.dormant.Dormant_LG_DY1()+' l'+ParamService.dormant.Dormant_LG_LX1()+','+ParamService.dormant.Dormant_LG_LY1()+' a'+ParamService.dormant.Dormant_H_RayonX2()+','+ParamService.dormant.Dormant_H_RayonY2()+' 0,0,0 '+ParamService.dormant.Dormant_LG_LX2()+','+ParamService.dormant.Dormant_LG_LY2()+' v'+ParamService.dormant.Dormant_LG_DY2()+' a'+ParamService.dormant.Dormant_B_RayonX2()+','+ParamService.dormant.Dormant_B_RayonY2()+' 0,0,0 '+ParamService.dormant.Dormant_LG_LX3()+','+ParamService.dormant.Dormant_LG_LY3()+' l'+ParamService.dormant.Dormant_LG_LX4()+','+ParamService.dormant.Dormant_LG_LY4()+''"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_LG_Trans_X()+','+ParamService.dormant.Dormant_LG_Trans_Y()+') rotate('+ParamService.dormant.Dormant_LG_Rotate()+')'"></path>
+
+
+                    <path *ngIf="ParamService.dormant.LD_ON==1" id="Dormant_LD"
+                          [attr.d]="'M0,0'+' v'+ParamService.dormant.Dormant_LD_DY1()+' l'+ParamService.dormant.Dormant_LD_LX1()+','+ParamService.dormant.Dormant_LD_LY1()+' a'+ParamService.dormant.Dormant_B_RayonX2()+','+ParamService.dormant.Dormant_B_RayonY2()+' 0,0,0 '+ParamService.dormant.Dormant_LD_LX2()+','+ParamService.dormant.Dormant_LD_LY2()+' v'+ParamService.dormant.Dormant_LD_DY2()+' a'+ParamService.dormant.Dormant_H_RayonX2()+','+ParamService.dormant.Dormant_H_RayonY2()+' 0,0,0 '+ParamService.dormant.Dormant_LD_LX3()+','+ParamService.dormant.Dormant_LD_LY3()+' l'+ParamService.dormant.Dormant_LD_LX4()+','+ParamService.dormant.Dormant_LD_LY4()+''"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_LD_Trans_X()+','+ParamService.dormant.Dormant_LD_Trans_Y()+') rotate('+ParamService.dormant.Dormant_LD_Rotate()+')'"></path>
+
+
+                    <path *ngIf="ParamService.dormant.Imposte_ON==1" id="Imposte"
+                          [attr.d]="'M0,0 v'+ParamService.dormant.Dormant_Imposte_DY1()+' a'+ParamService.dormant.Dormant_H_RayonY2()+','+ParamService.dormant.Dormant_H_RayonX2()+' 0,0,0 '+ParamService.dormant.Dormant_Imposte_LX1()+','+ParamService.dormant.Dormant_Imposte_LY1()+' l'+ParamService.dormant.Dormant_Imposte_LX2()+','+ParamService.dormant.Dormant_Imposte_LY2()+' v'+ParamService.dormant.Dormant_Imposte_DY2()+' l'+ParamService.dormant.Dormant_Imposte_LX3()+','+ParamService.dormant.Dormant_Imposte_LY3()+' a'+ParamService.dormant.Dormant_H_RayonY1()+','+ParamService.dormant.Dormant_H_RayonX1()+' 0,0,0 '+ParamService.dormant.Dormant_Imposte_LX4()+','+ParamService.dormant.Dormant_Imposte_LY4()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_Imposte_Trans_X()+','+ParamService.dormant.Dormant_Imposte_Trans_Y()+') rotate('+ParamService.dormant.Dormant_Imposte_Rotate()+')'"></path>
+
+
+                    <path *ngIf="ParamService.dormant.Allege_ON==1" id="Allege"
+                          [attr.d]="'M0,0 v'+ParamService.dormant.Dormant_Allege_DY1()+' a'+ParamService.dormant.Dormant_B_RayonY2()+','+ParamService.dormant.Dormant_B_RayonX2()+' 0,0,0 '+ParamService.dormant.Dormant_Allege_LX1()+','+ParamService.dormant.Dormant_Allege_LY1()+' l'+ParamService.dormant.Dormant_Allege_LX2()+','+ParamService.dormant.Dormant_Allege_LY2()+' v'+ParamService.dormant.Dormant_Allege_DY2()+' l'+ParamService.dormant.Dormant_Allege_LX3()+','+ParamService.dormant.Dormant_Allege_LY3()+' a'+ParamService.dormant.Dormant_B_RayonY2()+','+ParamService.dormant.Dormant_B_RayonX2()+' 0,0,0 '+ParamService.dormant.Dormant_Allege_LX4()+','+ParamService.dormant.Dormant_Allege_LY4()+' z'"
+                          [attr.transform]="'translate('+ParamService.dormant.Dormant_Allege_Trans_X()+','+ParamService.dormant.Dormant_Allege_Trans_Y()+') rotate('+ParamService.dormant.Dormant_Allege_Rotate()+')'"></path>
+                </g>
+                </g>
+
+                <!--holders -->
+
+
+                <!--  gauche haut -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="-7.5" [attr.x]="-7.5" height="15" width="15"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;" stroke="#000000"
+                      transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+                <!--  droite haut -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="-7.5" [attr.x]="ParamService.dormant.Total_Larg()-7.5" height="15"
+                      width="15" style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;"
+                      stroke="#000000" transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+                <!--  gauche bas -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="ParamService.dormant.Total_Haut()-7.5" [attr.x]="-7.5" height="15"
+                      width="15" style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;"
+                      stroke="#000000" transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+
+                <!--  droite bas -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="ParamService.dormant.Total_Haut()-7.5"
+                      [attr.x]="ParamService.dormant.Total_Larg()-7.5" height="15" width="15"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;" stroke="#000000"
+                      transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+                <!--  milieu haut -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="-7.5" [attr.x]="ParamService.dormant.Total_Larg2()-7.5" height="15"
+                      width="15" style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;"
+                      stroke="#000000" transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+                
+                <!--  mileu gauche -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="(ParamService.dormant.Total_Haut()-15)/2" [attr.x]="-7.5"
+                      height="15" width="15" style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;"
+                      stroke="#000000" transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+                <!--  mileu droite -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="(ParamService.dormant.Total_Haut()-15)/2"
+                      [attr.x]="ParamService.dormant.Total_Larg()-7.5" height="15" width="15"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;" stroke="#000000"
+                      transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+
+                <!--  mileu bas -->
+                <!-- petit -->
+                <rect class="petitHolder" [attr.y]="ParamService.dormant.Total_Haut()-7.5"
+                      [attr.x]="(ParamService.dormant.Total_Larg()-15)/2" height="15" width="15"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px;  opacity: 0.4;" stroke="#000000"
+                      transform="rotate(0,523.5111111111112, 311.1514792899409)" fill="#FFFFFF"></rect>
+
+               <!-- fin class mobilite -->
+
+
+            <!--GRAND holders -->
+
+
+                <!--  gauche haut -->
+                <!-- grand -->
+                <rect id="gaucheHaut" class="grandHolder " [attr.y]="-30" [attr.x]="-30" width="60" height="60" fill="#ff0000"
+                      stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: nwse-resize; opacity: 0;"></rect>
+
+
+                <!--  droite haut -->
+                <!-- grand -->
+                <rect id="droiteHaut" class="grandHolder" [attr.y]="-30" [attr.x]="ParamService.dormant.Total_Larg()-30" width="60"
+                      height="60" fill="#ff0000" stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: nesw-resize; opacity: 0;"></rect>
+
+                <!--  gauche bas -->
+                <!-- grand -->
+                <rect id="gaucheBas" class="grandHolder" [attr.y]="ParamService.dormant.Total_Haut()-30" [attr.x]="-30" width="60"
+                      height="60" fill="#ff0000" stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: nesw-resize; opacity: 0;"></rect>
+
+                <!--  droite bas -->
+                
+                <!-- grand -->
+                <rect id="droiteBas" class="grandHolder" [attr.y]="ParamService.dormant.Total_Haut()-30"
+                      [attr.x]="ParamService.dormant.Total_Larg()-30" width="60" height="60" fill="#ff0000"
+                      stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: nwse-resize; opacity: 0;"></rect>
+
+                <!--  milieu haut -->
+                
+                <!-- grand -->
+                <rect id="milieuHaut" class="grandHolder" [attr.y]="-30" [attr.x]="ParamService.dormant.Total_Larg2()-30" width="60"
+                      height="60" fill="#ff0000" stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: ns-resize; opacity: 0;"></rect>
+
+                <!--  mileu gauche -->
+                
+                <!-- grand -->
+                <rect id="milieuGauche" class="grandHolder" [attr.y]="(ParamService.dormant.Total_Haut()-60)/2" [attr.x]="-30" width="60"
+                      height="60" fill="#ff0000" stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: ew-resize	; opacity: 0;"></rect>
+
+                <!--  mileu droite -->
+                <!-- petit -->
+                
+                <!-- grand -->
+                <rect id="milieuDroite" class="grandHolder" [attr.y]="(ParamService.dormant.Total_Haut()-60)/2"
+                      [attr.x]="ParamService.dormant.Total_Larg()-30" width="60" height="60" fill="#ff0000"
+                      stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: ew-resize; opacity: 0;"></rect>
+
+                <!--  mileu bas -->
+                
+                <!-- grand -->
+                <rect id="milieuBas" class="grandHolder" [attr.y]="ParamService.dormant.Total_Haut()-30"
+                      [attr.x]="(ParamService.dormant.Total_Larg()-60)/2" width="60" height="60" fill="#ff0000"
+                      stroke="#000000" transform="matrix(1,0,0,1,0,0)"
+                      style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; cursor: ns-resize	; opacity: 0;"></rect>
+
+
+                <g id="rotation">
+
+                    <!-- petit cercle -->
+                    <circle class="holderRotation" class="rotation" [attr.cx]="ParamService.dormant.Total_Larg2()" [attr.cy]="-80" r="12.5"
+                            style="stroke-width: 0.8px; stroke-dasharray: 4px, 4px; opacity: 0.4;"
+                            stroke="#000000" fill="#FFFFFF"></circle>
+
+                    <!-- ligne liaison cercle -->
+                    <path class="holderRotation" stroke="#000000" fill="#ffffff" style="stroke-dasharray: 4, 4; opacity: 0.5;"
+                          [attr.d]="'M'+ParamService.dormant.Total_Larg()/2+','+ParamService.dormant.Total_Haut()/2 +'L'+ParamService.dormant.Total_Larg()/2+',-80'"
+                          fill="#ffffff" stroke="#000000" style="stroke-dasharray: 4px, 4px; opacity: 0.5;"></path>
+
+                    <!-- grand cercle -->
+                    <circle id="circle" class="holderRotation" [attr.cx]="ParamService.dormant.Total_Larg2()" [attr.cy]="-100" r="60" fill="#ff0000"
+                            stroke="#000000"
+                            style="stroke-width: 2px; stroke-dasharray: 4px, 4px; cursor: move; opacity: 0;"></circle>
+                </g>
+
+
+
+        </svg>
+    </div>
+</div>
+
+i

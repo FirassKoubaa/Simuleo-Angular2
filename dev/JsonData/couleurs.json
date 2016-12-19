@@ -1,0 +1,60 @@
+[
+
+  { "//////////////////COULEURS : TEINTE EN MASSE ////////////////":""},
+
+  {"id": 1,"submenu":"teinteAuMasse","submenuNb":1,"slide":1, "teinte": "black"},
+  {"id": 2,"submenu":"teinteAuMasse","submenuNb":1,"slide":1, "teinte": "#f3f6f6"},
+  {"id": 3,"submenu":"teinteAuMasse","submenuNb":1,"slide":1, "teinte": "#e6d9bd"},
+  {"id": 4,"submenu":"teinteAuMasse","submenuNb":1,"slide":1, "teinte": "#eee9da"},
+  {"id": 5,"submenu":"teinteAuMasse","submenuNb":1,"slide":2, "teinte": "#dadbd5"},
+  {"id": 6,"submenu":"teinteAuMasse","submenuNb":1,"slide":2, "teinte": "#f8f9fb"},
+  {"id": 7,"submenu":"teinteAuMasse","submenuNb":1,"slide":2, "teinte": "green"},
+  {"id": 8,"submenu":"teinteAuMasse","submenuNb":1,"slide":2, "teinte": "blue"},
+
+
+  { "//////////////////COULEURS : FILMS PLAXES ////////////////":""},
+
+  {"id": 9,"submenu":"filmsPlaxes","submenuNb":2,"slide":1,"motif": "#motifp1"},
+  {"id": 10,"submenu":"filmsPlaxes","submenuNb":2,"slide":1,"motif": "#motifp2"},
+  {"id": 11,"submenu":"filmsPlaxes","submenuNb":2,"slide":1,"motif": "#motifp3"},
+  {"id": 12,"submenu":"filmsPlaxes","submenuNb":2,"slide":1,"motif": "#motifp4"},
+  {"id": 13,"submenu":"filmsPlaxes","submenuNb":2,"slide":2,"motif": "#motifp5"},
+  {"id": 14,"submenu":"filmsPlaxes","submenuNb":2,"slide":2,"motif": "#motifp6"},
+
+  { "//////////////////COULEURS : PMMA ////////////////":""},
+
+  {"id": 15,"submenu":"pmma","submenuNb":3,"slide":1,"motif": "#motifpmma1"},
+  {"id": 16,"submenu":"pmma","submenuNb":3,"slide":1,"motif": "#motifpmma3"},
+  {"id": 17,"submenu":"pmma","submenuNb":3,"slide":1,"motif": "#motifpmma4"},
+  {"id": 18,"submenu":"pmma","submenuNb":3,"slide":1,"motif": "#motifpmma5"},
+  {"id": 19,"submenu":"pmma","submenuNb":3,"slide":2,"motif": "#motifpmma6"},
+  {"id": 20,"submenu":"pmma","submenuNb":3,"slide":2,"motif": "#motifpmma7"},
+
+  { "//////////////////COULEURS : PLAQUAGE EN BOIS ////////////////":""},
+
+  {"id": 21,"submenu":"bois","submenuNb":4,"slide":1,"motif": "#motif00"},
+  {"id": 22,"submenu":"bois","submenuNb":4,"slide":1,"motif": "#motif0"},
+  {"id": 23,"submenu":"bois","submenuNb":4,"slide":1,"motif": "#motif1"},
+  {"id": 24,"submenu":"bois","submenuNb":4,"slide":1,"motif": "#motif2"},
+  {"id": 25,"submenu":"bois","submenuNb":4,"slide":2,"motif": "#motif3"},
+  {"id": 26,"submenu":"bois","submenuNb":4,"slide":2,"motif": "#motif5"},
+
+
+
+  { "//////////////////COULEURS : IMPRIMES ////////////////":""},
+
+  {"id": 27,"submenu":"imprimes","submenuNb":5,"slide":1,"motif": "#motifImp1"},
+  {"id": 28,"submenu":"imprimes","submenuNb":5,"slide":1,"motif": "#motif4"},
+  {"id": 29,"submenu":"imprimes","submenuNb":5,"slide":1,"motif": "#motifImp4"},
+  {"id": 30,"submenu":"imprimes","submenuNb":5,"slide":1,"motif": "#motifImp5"},
+  {"id": 31,"submenu":"imprimes","submenuNb":5,"slide":2,"motif": "#motifImp6"},
+  {"id": 32,"submenu":"imprimes","submenuNb":5,"slide":2,"motif": "#motifImp7"},
+  {"id": 33,"submenu":"imprimes","submenuNb":5,"slide":2,"motif": "#motifImp8"},
+
+
+  { "//////////////////COULEURS : MOTIFS CHARGES ////////////////":""}
+
+
+
+
+]

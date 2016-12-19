@@ -1,0 +1,458 @@
+<div class="container">
+    <!--<div class="col-md-12">-->
+    <div id="Carousel" class="carousel slide">
+
+        <ol class="carousel-indicators">
+            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#Carousel" data-slide-to="1"></li>
+        </ol>
+
+
+        <!--SI LE MENU SELECTIONNE EST : TEINTEE EN MASSE (1)-->
+        <div *ngIf="menuCouleursRecu==1">
+
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <!--1ER SLIDE-->
+                <div class="item active">
+                    <div>
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===1">
+                                <div *ngIf="color.slide===1">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <!--<img class="img-circle" src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" svg=""
+                                                 (click)="onSelectColor(color.submenuNb , color.teinte)"
+                                                 preserveAspectRatio="none" xlink="http://www.w3.org/1999/xlink">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.teinte"
+                                                                [attr.fill]="color.teinte" width="100%" height="50%">
+                                                        </circle>
+                                                    </g>
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+                <!--2EME SLIDE-->
+                <div class="item">
+                    <div class="row">
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===1">
+                                <div *ngIf="color.slide===2">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <!--<img class="img-circle" src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" svg=""
+                                                 (click)="onSelectColor(color.submenuNb ,color.teinte)"
+                                                 preserveAspectRatio="none" xlink="http://www.w3.org/1999/xlink">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id"
+                                                                [attr.fill]="color.teinte" width="100%" height="50%">
+                                                        </circle>
+                                                    </g>
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+            </div><!--.carousel-inner-->
+
+
+        </div>
+        <!--//////////////////////////////////////////////////////////////////////-->
+
+
+        <!--SI LE MENU SELECTIONNE EST : FILMS PLAXES (2)-->
+        <div *ngIf="menuCouleursRecu==2">
+
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <!--1ER SLIDE-->
+                <div class="item active">
+                    <div *ngFor="#color of CouleurService.colors_list">
+
+                        <div *ngIf="color.submenuNb===2">
+                            <div *ngIf="color.slide===1">
+
+                                <div class="col-md-3">
+                                    <!--<a href="#" class="thumbnail">-->
+                                    <a href="#">
+
+
+                                        <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                             preserveAspectRatio="none">
+                                            <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                <g>
+                                                    <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                            height="100%"
+                                                            [attr.fill]="'url(' + color.motif + ')'">
+
+                                                    </circle>
+                                                </g>
+
+                                            </g>
+                                        </svg>
+
+
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!--.item-->
+
+                <!--2EME SLIDE-->
+                <div class="item">
+                    <div class="row">
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===2">
+                                <div *ngIf="color.slide===2">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                                 preserveAspectRatio="none">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                                height="100%"
+                                                                [attr.fill]="'url(' + color.motif + ')'">
+
+                                                        </circle>
+                                                    </g>
+
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+            </div><!--.carousel-inner-->
+
+
+        </div>
+        <!--//////////////////////////////////////////////////////////////////////-->
+
+        <!--SI LE MENU SELECTIONNE EST : PMMA (3)-->
+        <div *ngIf="menuCouleursRecu==3">
+
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <!--1ER SLIDE-->
+                <div class="item active">
+                    <div>
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===3">
+                                <div *ngIf="color.slide===1">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                                 preserveAspectRatio="none">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                                height="100%"
+                                                                [attr.fill]="'url(' + color.motif + ')'">
+
+                                                        </circle>
+                                                    </g>
+
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+                <!--2EME SLIDE-->
+                <div class="item">
+                    <div class="row">
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===3">
+                                <div *ngIf="color.slide===2">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                                 preserveAspectRatio="none">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                                height="100%"
+                                                                [attr.fill]="'url(' + color.motif + ')'">
+
+                                                        </circle>
+                                                    </g>
+
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+            </div><!--.carousel-inner-->
+
+
+        </div>
+        <!--//////////////////////////////////////////////////////////////////////-->
+
+
+        <!--SI LE MENU SELECTIONNE EST : PLAQUAGE BOIS (4)-->
+        <div *ngIf="menuCouleursRecu==4">
+
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <!--1ER SLIDE-->
+                <div class="item active">
+                    <div class="row">
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===4">
+                                <div *ngIf="color.slide===1">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                                 preserveAspectRatio="none">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                                height="100%"
+                                                                [attr.fill]="'url(' + color.motif + ')'">
+
+                                                        </circle>
+                                                    </g>
+
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+                <!--2EME SLIDE-->
+                <div class="item">
+                    <div class="row">
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===4">
+                                <div *ngIf="color.slide===2">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                                 preserveAspectRatio="none">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                                height="100%"
+                                                                [attr.fill]="'url(' + color.motif + ')'">
+
+                                                        </circle>
+                                                    </g>
+
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+            </div><!--.carousel-inner-->
+
+
+        </div>
+        <!--//////////////////////////////////////////////////////////////////////-->
+
+        <!--SI LE MENU SELECTIONNE EST : IMPRIMES (5)-->
+        <div *ngIf="menuCouleursRecu==5">
+
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <!--1ER SLIDE-->
+                <div class="item active">
+                    <div class="row">
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===5">
+                                <div *ngIf="color.slide===1">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                                 preserveAspectRatio="none">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                                height="100%"
+                                                                [attr.fill]="'url(' + color.motif + ')'">
+
+                                                        </circle>
+                                                    </g>
+
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+                <!--2EME SLIDE-->
+                <div class="item">
+                    <div class="row">
+                        <div *ngFor="#color of CouleurService.colors_list">
+
+                            <div *ngIf="color.submenuNb===5">
+                                <div *ngIf="color.slide===2">
+
+                                    <div class="col-md-3">
+                                        <a href="#">
+
+
+                                            <svg svg="" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 (click)="onSelectColor(color.submenuNb ,'url(' +color.motif + ')')"
+                                                 preserveAspectRatio="none">
+                                                <g stroke-width="1" stroke="silver" id="boutton" cursor="pointer">
+                                                    <g>
+                                                        <circle cx="50" cy="50" r="40" [attr.id]="color.id" width="100%"
+                                                                height="100%"
+                                                                [attr.fill]="'url(' + color.motif + ')'">
+
+                                                        </circle>
+                                                    </g>
+
+                                                </g>
+                                            </svg>
+
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.row-->
+                </div><!--.item-->
+
+            </div><!--.carousel-inner-->
+
+
+        </div>
+        <!--//////////////////////////////////////////////////////////////////////-->
+
+
+        <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+    </div><!--.Carousel-->
+
+    <!--</div>-->
+</div><!--.container-->
+
+<!--###############################MOTIFS SVG###########################""""-->
+
+
+
+
+
+
+

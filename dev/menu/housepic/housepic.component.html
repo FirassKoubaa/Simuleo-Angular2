@@ -1,0 +1,52 @@
+<!-- We will make a simple accordian with hover effects
+The markup will have a list with images and the titles-->
+
+<div class="accordian">
+    <ul *ngFor="#img of images_list">
+
+        <!--par defaut : vue Interieure-->
+
+        <div *ngIf="VueChoisie==null">
+            <li *ngIf="img.vue=='int'">
+                <div class="image_title">
+                    <a href="#">{{img.legende}}</a>
+                </div>
+
+                <a (click)="onSelectImage(img.image)">
+                    <img src="{{img.image}}" style="height: 320px ; width: 640px"/>
+                </a>
+            </li>
+        </div>
+
+        <!--Vue seletctionne : vue Interieure : true-->
+
+        <div *ngIf="VueChoisie==true">
+            <li *ngIf="img.vue=='int'">
+                <div class="image_title">
+                    <a href="#">{{img.legende}}</a>
+                </div>
+
+                <a (click)="onSelectImage(img.image)">
+                    <img src="{{img.image}}" style="height: 320px ; width: 640px"/>
+                </a>
+            </li>
+        </div>
+
+        <!--Vue seletctionne : vue exterieure : false-->
+
+        <div *ngIf="VueChoisie==false">
+            <li *ngIf="img.vue=='ext'">
+                <div class="image_title">
+                    <a href="#">{{img.legende}}</a>
+                </div>
+
+                <a (click)="onSelectImage(img.image)">
+                    <img src="{{img.image}}" style="height: 320px ; width: 640px"/>
+                </a>
+            </li>
+        </div>
+
+
+    </ul>
+</div>
+

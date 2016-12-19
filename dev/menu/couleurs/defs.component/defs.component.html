@@ -1,0 +1,275 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" width="0%" height="0%"
+     viewBox="0 0 2120 1080" preserveAspectRatio="xMidYMid meet">
+    <!-- __________________________________________________________________________ -->
+    <defs>
+        <linearGradient id="degrade" x1="0" y1="0" x2="100%" y2="0">
+            <stop offset="0%" stop-color="#dadada" stop-opacity="0.45"></stop>
+            <stop offset="30%" stop-color="#787878" stop-opacity="0.75"></stop>
+            <stop offset="65%" stop-color="#a2a2a2a" stop-opacity="0.45"></stop>
+        </linearGradient>
+        <filter id="OmbreG" filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation="5" in="SourceAlpha" result="Blur"></feGaussianBlur>
+            <!-- definit lunmière avec projecteur positionné dans un plan 3D coordinates x: 40px, y: -30px, z: 200px: -->
+            <feSpecularLighting surfaceScale="1" specularConstant="1" specularExponent="75" lighting-color="#BBD2E1"
+                                in="Blur" result="Specular">
+                <fePointLight x="-1000" y="-350" z="1250"></fePointLight>
+            </feSpecularLighting>
+            <!-- On coupe les parties qui dépasse de l'image d'origine (source graphic) -->
+            <feComposite operator="in" in="Specular" in2="SourceAlpha" result="Composite"></feComposite>
+            <!-- … and then merge source graphic and lighting effect: -->
+            <!-- on ajoute de l'ombre -->
+            <!-- on floute l'image d'origine -->
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"></feGaussianBlur>
+            <!-- on la deplace de dx=2px à droite et dy=2px à en bas -->
+            <feOffset dx="1" dy="1" result="offsetblur"></feOffset>
+            <!-- on defini la couleur de l'ombre #303030 gris foncé -->
+            <feFlood flood-color="black"></feFlood>
+            <feComposite in2="offsetblur" operator="in"></feComposite>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="1.25"></feFuncA>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="Composite"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter id="SimulMur" x="0" y="0" width="1" height="1">
+            <feTurbulence seed="0" type="fractalNoise" numOctaves="14" baseFrequency="0.25"></feTurbulence>
+            <feDiffuseLighting kernelUnitLength="0.01" diffuseConstant="0.8" surfaceScale="0.5"
+                               lighting-color="#DFF2FF">
+                <feDistantLight elevation="65" azimuth="75"></feDistantLight>
+            </feDiffuseLighting>
+        </filter>
+        <linearGradient id="Degradebleu" x1="0" y1="40%" x2="60%" y2="100%">
+            <stop offset="0%" stop-color="#ddf1f9"></stop>
+            <stop offset="35%" stop-color="#b5e2f3"></stop>
+            <stop offset="65%" stop-color="#feffff"></stop>
+            <stop offset="100%" stop-color="#b5f2f3"></stop>
+        </linearGradient>
+        <pattern id="imgpaumelle" patternUnits="userSpaceOnUse" width="8" height="30">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/paumelle.png" x="0" y="0" width="8" height="30"></image>
+        </pattern>
+        <pattern id="imgpoigne" patternUnits="userSpaceOnUse" width="13" height="70">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/poigne.png" x="0" y="0" width="13" height="70"></image>
+        </pattern>
+        <pattern id="motif00" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif00.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif0" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif0.png" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif1" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif1.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif2" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif2.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif3" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif3.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif4" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif4.bmp" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif5" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif5.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif6" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif6.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif7" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif7.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif8" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif8.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif9" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif9.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif10" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif10.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif11" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif11.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motif12" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/texturePorte/motif12.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motifp1" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif1.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motifp2" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif2.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motifp3" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif3.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motifp4" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif4.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motifp5" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif5.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+        </pattern>
+        <pattern id="motifp6" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse" viewBox="0 0 35 700">
+            <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif6.jpg" width="35" height="700"
+                   viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+            <pattern id="motifp7" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse"
+                     viewBox="0 0 35 700">
+                <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif7.jpg" width="35" height="700"
+                       viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+                <pattern id="motifp8" x="0" y="0" width="35" height="700" patternUnits="userSpaceOnUse"
+                         viewBox="0 0 35 700">
+                    <image xlink:href="http://menuiserie-dev.sifast.fr/alphacan-demo-v2/assets/images/pattern/Filmsplaxes/motif8.jpg" width="35" height="700"
+                           viewBox="0 0 35 700" preserveAspectRatio="none"></image>
+                </pattern>
+                <pattern id="motifpmma1" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <path d="M 0,20 l 20,-20 M -5,5 l 10,-10
+M 15,25 l 10,-10" stroke-width="2" shape-rendering="auto" stroke="#343434" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma2" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <path d="M 0,20 l 20,-20 M -5,5 l 10,-10
+M 15,25 l 10,-10" stroke-width="4" shape-rendering="auto" stroke="#343434" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma3" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <path d="M 0,20 l 20,-20 M -5,5 l 10,-10
+M 15,25 l 10,-10" stroke-width="1" shape-rendering="auto" stroke="#343434" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma4" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <rect x="0" y="0" width="10" height="10" fill="white" stroke="none"></rect>
+                    <path d="M 0,10 l 10,-10 M -2.5,2.5 l 5,-5
+M 7.5,12.5 l 5,-5" stroke-width="2" shape-rendering="auto" stroke="#343434" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma5" patternUnits="userSpaceOnUse" width="40" height="40">
+                    <rect x="0" y="0" width="40" height="40" fill="white" stroke="none"></rect>
+                    <path d="M 0,40 l 40,-40 M -10,10 l 20,-20
+M 30,50 l 20,-20" stroke-width="2" shape-rendering="auto" stroke="#343434" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma6" patternUnits="userSpaceOnUse" width="60" height="60">
+                    <rect width="60" height="60" fill="white" stroke="none"></rect>
+                    <path d="M 0,60 l 60,-60 M -15,15 l 30,-30
+M 45,75 l 30,-30" stroke-width="40" shape-rendering="auto" stroke="#343434" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma7" patternUnits="userSpaceOnUse" width="4" height="4">
+                    <rect x="0" y="0" width="4" height="4" fill="white" stroke="none"></rect>
+                    <path d="M 0,4 l 4,-4 M -1,1 l 2,-2
+M 3,5 l 2,-2" stroke-width="1" shape-rendering="auto" stroke="#343434" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma8" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <path d="M 10, 0 l 0, 20" stroke-width="1" shape-rendering="crispEdges" stroke="#343434"
+                          stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifpmma8" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <path d="M 10, 0 l 0, 20" stroke-width="1" shape-rendering="crispEdges" stroke="#343434"
+                          stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifImp1" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <rect x="0" y="0" width="10" height="10" fill="white" stroke="none"></rect>
+                    <circle cx="5" cy="5" r="2" fill="#343434" stroke="#343434" stroke-width="0"></circle>
+                </pattern>
+                <pattern id="motifImp2" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <circle cx="10" cy="10" r="1" fill="#343434" stroke="#343434" stroke-width="0"></circle>
+                </pattern>
+                <pattern xmlns="http://www.w3.org/2000/svg" id="motifImp3" patternUnits="userSpaceOnUse" width="50"
+                         height="50" patternTransform="rotate(-45)">
+                    <rect x="0" y="0" fill="white" width="50" height="50"></rect>
+                    <line x1="25" y="0" x2="25" y2="50" stroke="goldenrod" stroke-width="25"></line>
+                </pattern>
+                <!-- <pattern id="motifImp3" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <rect x="0" y="0" width="10" height="10" fill="white" stroke="none" />
+                    <circle cx="5" cy="5" r="2" fill="#343434" stroke="#343434" stroke-width="0"></circle>
+                </pattern> -->
+                <pattern xmlns="http://www.w3.org/2000/svg" id="motifImp4" patternUnits="userSpaceOnUse" width="230.4"
+                         height="221.7" patternTransform="scale(.5)">
+                    <defs>
+                        <g id="wave" stroke="#000080" fill="none">
+                            <circle fill="#FFF" stroke-width="8" r="106.7"></circle>
+                            <circle stroke-width="9" r="81"></circle>
+                            <circle stroke-width="8" r="55.3"></circle>
+                            <circle stroke-width="7" r="32.5"></circle>
+                            <circle stroke-width="7" r="13.2"></circle>
+                        </g>
+                    </defs>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="229.9" y="0.7" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="114.9" y="55.3" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="-114.9" y="55.3" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="111.3" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="229.9" y="111.3" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="114.9" y="166.4" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="-114.9" y="166.4" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="222.2" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="345.1" y="166.4" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="229.9" y="222.2" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="114.9" y="277.2" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="-114.9" y="277.2" xlink:href="#wave"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" x="345.1" y="277.2" xlink:href="#wave"></use>
+                    <!-- <pattern id="motifImp4" patternUnits="userSpaceOnUse" width="20" height="20">
+<rect x="0" y="0" width="20" height="20" fill="white" stroke="none" />
+<circle cx="10" cy="10" r="4" fill="#343434" stroke="#343434" stroke-width="0"></circle>
+-->
+                </pattern>
+                <pattern id="motifImp5" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <circle cx="10" cy="10" r="2" fill="#343434" stroke="#343434" stroke-width="0"></circle>
+                </pattern>
+                <pattern id="motifImp6" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <path d="M0,20 l20,-20 M-5,5 l10,-10 M15,25 l10,-10 M0,0 l20,20 M5,-5 l-10,10 M25,15 l-10,10"
+                          stroke-width="2" stroke="#343434" fill="pink" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifImp7" patternUnits="userSpaceOnUse" width="24" height="24">
+                    <rect x="0" y="0" width="24" height="24" fill="white" stroke="none"></rect>
+                    <path d="M2,0 v24 M10,0 v24 M18,0 v24 M0,2 h24 M0,10 h24 M0,18 h24" stroke-width="4" stroke="blue"
+                          stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifImp8" patternUnits="userSpaceOnUse" width="20" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="white" stroke="none"></rect>
+                    <path d="M 0,15 l 20,-10 M 0,5 l 20,-10
+M 0,25 l 20,-10" stroke-width="2" shape-rendering="auto" stroke="darkorange" stroke-linecap="square"></path>
+                    <path d="M -5,0 l 10,20 M 5,0 l 10,20
+M 15,0 l 10,20" stroke-width="2" shape-rendering="auto" stroke="darkorange" stroke-linecap="square"></path>
+                </pattern>
+                <pattern id="motifImp9" patternUnits="userSpaceOnUse" width="4" height="4">
+                    <path d="M 2, 0 l 0, 4" stroke-width="1" shape-rendering="crispEdges" stroke="darkorange"
+                          stroke-linecap="square"></path>
+                    <path d="M 0,2 l 4,0" stroke-width="1" shape-rendering="crispEdges" stroke="darkorange"
+                          stroke-linecap="square"></path>
+                </pattern>
+                <rect id="trou" width="6" height="6" rx="3" ry="3" fill="#CECECE" stroke="gray"></rect>
+                <g id="bpaumelle" stroke-width="0.5">
+                    <rect x="0" y="0" rx="3" ry="3" width="6" height="18"></rect>
+                    <rect x="0" y="18" rx="3" ry="3" width="6" height="15"></rect>
+                </g>
+                <g id="bpoignee" opacity="0.9" stroke-width="0.5" filter="url(#OmbreG)">
+                    <rect x="1" y="0" rx="5" ry="8" width="11" height="27"></rect>
+                    <rect x="4" y="7" rx="22" ry="5" width="60" height="11"></rect>
+                    <rect x="9" y="10" rx="10" ry="3" width="40" height="5" fill="white" opacity="0.4"></rect>
+                </g>
+            </pattern>
+        </pattern>
+    </defs>
+</svg>
